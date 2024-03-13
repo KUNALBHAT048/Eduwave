@@ -10,9 +10,8 @@ def reg(request):
     if request.method == "POST":
         register_form = CustomRegistrationForm(request.POST)
         if register_form.is_valid():
-            name = register_form.save()            
-            login(request,name)
-            print(name)
+            user = register_form.save()            
+            login(request,user)
             return redirect('/afterlogin')  # Redirect to a new URL, adjust as 
             # return  HttpResponse("Registered Successfully! You can now login.")
         else:

@@ -7,5 +7,13 @@
 </head>
 <body>
     <h1>Hello </h1>
+
+    <h1>Logged in as {{user.username}} (nihar ka papa) </h1>
+    <a class="nav-link"><li class="nav-item">
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">logout</button>
+        </form>
+    </a>
 </body>
 </html>
